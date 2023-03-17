@@ -62,8 +62,10 @@ object IsPositive extends App:
 
   // Generic version of compose
   def compose2[A, B, C](f: B => C, g: A => B): A => C = x => f(g(x))
-  // not Working
-  // println(compose2(_ - 1, _ * 2)(3)) // 5
+
+  val x: Int => Int = _ - 1
+  val y: Int => Int = _ * 2
+  println("\tcompose2(_ - 1, _ * 2)(3): "+ compose2(x, y)(3)) // 5
 
   // 6 - recursion
   println("Testing recursion func:")
